@@ -1,6 +1,10 @@
-#!/usr/bin/env bash
-#Script that plays listening ports and includes
-#listening sockets as well as the PID and name of
-#the program to which each socket belongs.
+#!/bin/bash
+# ping a specified Ip five times or display usage if no argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
+fi
 
-netstat -l --program
+ip_address="$1"
+
+ping -c 5 "$ip_address"
