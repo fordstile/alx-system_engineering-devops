@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ping a specified Ip five times or display usage if no argument
 if [ "$1" == "" ]; then
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
