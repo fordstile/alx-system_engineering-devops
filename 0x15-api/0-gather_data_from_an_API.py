@@ -12,7 +12,8 @@ def get_todo_list(employee_id):
     '''Function to get the TODO list'''
     # Construct the URLs for fetching user information and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId="
+    f"{employee_id}"
 
     # Send HTTP requests to fetch user information and TODO list
     user_response = requests.get(user_url)
