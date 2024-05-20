@@ -12,8 +12,7 @@ def get_todo_list(employee_id):
     '''Function to get the TODO list'''
     # Construct the URLs for fetching user information and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId="
-    f"{employee_id}"
+    todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
 
     # Send HTTP requests to fetch user information and TODO list
     user_response = requests.get(user_url)
@@ -33,12 +32,9 @@ def get_todo_list(employee_id):
         total_tasks = len(todo_list)
 
         # Print the TODO list progress
-        print(f'Employee Name: {user_name}')
-        print(f'To Do Count: {total_tasks}')
-        print(f'Task completion: ({num_completed_tasks}/{total_tasks})')
-
+        print(f'Employee {user_name} is done with tasks({num_completed_tasks}/{total_tasks}):')
         for task in completed_tasks:
-            print(f"\t{task['title']}")  # Adjusted task formatting
+            print(task['title'])
     else:
         print('Error: Could not retrieve data')
 
@@ -54,3 +50,4 @@ if __name__ == '__main__':
 
     # Call the function to fetch and display the TODO list progress
     get_todo_list(employee_id)
+
