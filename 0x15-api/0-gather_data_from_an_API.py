@@ -8,6 +8,7 @@ his/her TODO list progress
 import requests
 import sys
 
+
 def get_todo_list(employee_id):
     '''Function to get the TODO list'''
     # Construct the URLs for fetching user information and TODO list
@@ -32,8 +33,10 @@ def get_todo_list(employee_id):
         total_tasks = len(todo_list)
 
         # Print the TODO list progress
-        print(f'Employee {user_name} is done with tasks({num_completed_tasks}'
-                f'/{total_tasks}):')
+        user_name = na
+        num_completed_tasks = nt
+        total_tasks = tt
+        print(f'Employee {na} is done with tasks({nt}/{tt}):')
         for task in completed_tasks:
             print(task['title'])
     else:
