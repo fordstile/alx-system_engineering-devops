@@ -12,11 +12,11 @@ def get_todo_list(employee_id):
     '''Function to get the TODO list'''
     # Construct the URLs for fetching user information and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
 
     # Send HTTP requests to fetch user information and TODO list
     user_response = requests.get(user_url)
-    todo_response = requests.get(todo_url)
+    todo_response = requests.get(url)
 
     # Check if both requests are successful
     if user_response.status_code == 200 and todo_response.status_code == 200:
@@ -32,7 +32,8 @@ def get_todo_list(employee_id):
         total_tasks = len(todo_list)
 
         # Print the TODO list progress
-        print(f'Employee {user_name} is done with tasks({num_completed_tasks}/{total_tasks}):')
+        print(f'Employee {user_name} is done with tasks({num_completed_tasks}'
+                f'/{total_tasks}):')
         for task in completed_tasks:
             print(task['title'])
     else:
