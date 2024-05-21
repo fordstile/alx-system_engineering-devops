@@ -4,9 +4,9 @@ Python script that, using the jsonplaceholder.typicode.com/,
 for a given employee ID, returns information about
 his/her TODO list progress
 '''
+
 import requests
 import sys
-
 
 def get_todo_list(employee_id):
     '''Function to get the TODO list'''
@@ -49,4 +49,4 @@ if __name__ == '__main__':
     employee_id = sys.argv[1]
 
     # Call the function to fetch and display the TODO list progress
-    get_todo_list(employee_id
+    get_todo_list(employee_id)
