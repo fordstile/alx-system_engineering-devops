@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-'''
+
+"""
 Python script that, using the jsonplaceholder.typicode.com/,
 for a given employee ID, returns information about
 his/her TODO list progress
-'''
+"""
+
 import requests
 import sys
 
-
 def get_todo_list(employee_id):
-    '''Function to get the TODO list'''
+    """Function to get the TODO list"""
     # Construct the URLs for fetching user information and TODO list
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todo_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
@@ -32,12 +33,11 @@ def get_todo_list(employee_id):
         total_tasks = len(todo_list)
 
         # Print the TODO list progress
-        print(f'Employee {user_name} is done with tasks({num_completed_tasks}/{total_tasks}):')
+        print(f'Employee {user_name} is done with {num_completed_tasks} out of {total_tasks} tasks:')
         for task in completed_tasks:
             print(task['title'])
     else:
         print('Error: Could not retrieve data')
-
 
 if __name__ == '__main__':
     # Check if the correct number of command-line arguments is provided
