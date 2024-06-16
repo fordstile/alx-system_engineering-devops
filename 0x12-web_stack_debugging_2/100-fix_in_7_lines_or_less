@@ -6,3 +6,4 @@ sed -i 's/80 default_server/8080 default_server/g' /etc/nginx/sites-available/de
 usermod -aG www-data nginx
 chown -R nginx:nginx /var/lib/nginx /var/log/nginx /run/nginx.pid /var/www/html
 service nginx start
+
